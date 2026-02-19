@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li class="active" data-target="dashboard">Dashboard</li>
+      <li data-target="users">Users</li>
+      <li data-target="reports">Reports</li>
+      <li data-target="settings">Settings</li>
+    </ul>
+    <button id="themeBtn">🌙 Dark Mode</button>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section active">
+      <h1>Dashboard</h1>
+      <p>Welcome, Admin 👋</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p id="totalUsers">0</p>
+        </div>
+        <div class="card">
+          <h3>Active Users</h3>
+          <p>8</p>
+        </div>
+        <div class="card">
+          <h3>Pending</h3>
+          <p>2</p>
+        </div>
+        <div class="card">
+          <h3>Revenue</h3>
+          <p>₹50,000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Users -->
+    <section id="users" class="section">
+      <h1>User List (API Data)</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+      </table>
+    </section>
+
+    <!-- Reports -->
+    <section id="reports" class="section">
+  <h1>Reports (API Based)</h1>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Total Users</h3>
+      <p id="reportTotal">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Active Users</h3>
+      <p id="reportActive">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Pending Users</h3>
+      <p id="reportPending">0</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px;">User Status Report</h3>
+
+  <div class="report-bar">
+    <span>Active</span>
+    <div class="bar">
+      <div id="activeBar"></div>
+    </div>
+  </div>
+
+  <div class="report-bar">
+    <span>Pending</span>
+    <div class="bar">
+      <div id="pendingBar"></div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Settings -->
+    <section id="settings" class="section">
+  <h1>Settings</h1>
+
+  <div class="setting-box">
+    <label>
+      <input type="checkbox" id="darkToggle">
+      Enable Dark Mode
+    </label>
+  </div>
+
+  <div class="setting-box">
+    <label>Font Size:</label>
+    <select id="fontSize">
+      <option value="14px">Small</option>
+      <option value="16px" selected>Medium</option>
+      <option value="18px">Large</option>
+    </select>
+  </div>
+
+  <p class="note">Settings are saved in browser (no backend).</p>
+</section>
+
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
